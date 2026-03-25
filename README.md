@@ -69,6 +69,4 @@ CREDITS
   Built by Ron's Animations
   GitHub: https://github.com/ronsanimations/SailOS
 
-================================================
-              SailOS 1.0 — Made with love
-================================================
+#              SailOS 1.0 — Made with love
