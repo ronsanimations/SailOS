@@ -1,9 +1,7 @@
 # SailOS
 Custom Zorin-based OS for Animators and Sailbrush users.
 
-================================================
-        SailOS 1.0 — Custom Linux OS
-================================================
+#        SailOS 1.0 — Custom Linux OS
 
 ABOUT
 SailOS 1.0 is a custom Linux operating system built
