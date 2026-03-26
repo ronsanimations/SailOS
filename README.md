@@ -51,14 +51,6 @@ HOW TO INSTALL
   3. Select "Try or Install SailOS"
   4. Follow the on-screen installer
 
-KNOWN ISSUES
-  - Boot splash may display "Zorin OS 18"
-    instead of SailOS (cosmetic only, may be
-    fixed in SailOS 1.2)
-  - Windows app support via Wine may require
-    manual setup after install (will be
-    improved in SailOS 1.2)
-
 BUILT WITH
   - Zorin OS 18 as the base
   - Cubic Custom Ubuntu ISO Creator
