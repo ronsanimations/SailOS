@@ -1,33 +1,34 @@
 #!/bin/bash
-# SailOS 1.0 -> 1.1 Gold Master Update Script
+# ---------------------------------------------------------
+# ⚓ SailOS 1.0 SMART CLOUD LOGIC
+# ---------------------------------------------------------
 
-# 1. Start the visual progress bar (so the user knows it's working)
-(
-echo "10" ; sleep 1
-echo "# Checking connection to SailOS servers..." ; sleep 1
+# 1. FETCH THE NEW VERSION NUMBER FROM GITHUB
+NEW_VER=$(curl -sL "https://raw.githubusercontent.com/ronsanimations/SailOS/refs/heads/main/version.txt")
+OLD_VER=$(cat /etc/sailos-version 2>/dev/null || echo "0.0")
 
-# 2. Check for internet before doing anything
-if ! ping -c 1 8.8.8.8 &> /dev/null; then
-    zenity --error --text="Update failed: No internet connection detected."
-    exit 1
+echo "⚓ Current Version: $OLD_VER"
+echo "⚓ Newest Version: $NEW_VER"
+
+# 2. RUN SETUP ONLY IF VERSION HAS CHANGED (OR FIRST RUN)
+if [ "$NEW_VER" != "$OLD_VER" ]; then
+    echo "🚀 Updating SailOS to Version $NEW_VER..."
+    
+    # Fix Icons & Wallpaper (This ensures they stay fixed)
+    mkdir -p /usr/share/icons/hicolor/scalable/apps/
+    cp /root/veadotube-icon.png /usr/share/icons/hicolor/scalable/apps/veadotube_icon.png 2>/dev/null
+    
+    mkdir -p /usr/share/backgrounds/sailos
+    cp /root/SailOS_wallpaper.png /usr/share/backgrounds/sailos/sailos-default.png 2>/dev/null
+    
+    # Update the local version file to match GitHub
+    echo "$NEW_VER" > /etc/sailos-version
+else
+    echo "✨ You are already on the latest version ($OLD_VER)."
 fi
 
-echo "40" ; sleep 1
-echo "# Linking to sailosdev Launchpad PPA..." 
+# 3. ALWAYS RUN SYSTEM UPDATES
+echo "📦 Checking for system package updates..."
+apt update && apt upgrade -y
 
-# 3. Add the PPA (using -y to skip the "Press Enter" prompt)
-sudo add-apt-repository ppa:sailosdev/stable -y
-sudo apt-get update
-
-echo "80" ; sleep 1
-echo "# Finalizing system version..."
-
-# 4. Update the version file to 1.1
-sudo bash -c 'echo "1.1" > /etc/sailos-version'
-
-echo "100" ; sleep 1
-echo "# Update Complete!"
-
-# 5. Show the final success message
-zenity --info --text="SailOS has been updated to Version 1.1! Your system is now linked to the official developer repositories."
-) | zenity --progress --title="SailOS System Update" --percentage=0 --auto-close
+echo "✅ SailOS is up to date!"
