@@ -10,10 +10,8 @@ for animators, VTubers, and content creators.
 
 INCLUDED APPS
   - Veadotube Mini   VTuber avatar software
-  - OpenToonz 1.7.1  Professional animation studio
   - OBS Studio 30.0  Screen recording and streaming
   - Discord          Chat and community
-  - Bottles          Windows app compatibility (GUI)
 
 SYSTEM REQUIREMENTS
   - 64-bit processor (x86_64)
@@ -54,7 +52,7 @@ HOW TO INSTALL
 BUILT WITH
   - Zorin OS 18 as the base
   - Cubic Custom Ubuntu ISO Creator
-  - Flatpak + Flathub for OpenToonz and Bottles
+  - Flatpak + Flathub for OBS and Discord
   - SDL3 compiled from source for Veadotube
 
 CREDITS
