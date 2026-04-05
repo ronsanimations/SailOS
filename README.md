@@ -20,7 +20,7 @@ You cannot use standard Windows "Extract All" for this.
 1. Download/Install [7-Zip](https://www.7-zip.org/).
 2. Right-click **ONLY** the first file: `SailOS.7z.001`.
 3. Select **7-Zip > Extract Here**.
-4. This will create the full **SailOS.iso** (approx. 5.11 GB).
+4. This will generate the full **SailOS.iso** (approx. 5.11 GB).
 
 ---
 
@@ -29,14 +29,14 @@ You cannot use standard Windows "Extract All" for this.
 > For the most reliable boot, use **Rufus** in **ISO Image Mode** (standard) with the settings below.
 
 ### Using Rufus (Recommended)
-1. **Device:** Select your USB or SD Card (1TB cards & smaller thumb drives supported).
+1. **Device:** Select your USB or SD Card.
 2. **Boot Selection:** Select your extracted `SailOS.iso`.
 3. **Partition Scheme:** Set to **GPT** (Crucial for Windows 11 desktops).
 4. **Target System:** Set to **UEFI (non CSM)**.
-5. **Start:** If prompted between ISO and DD mode, try **ISO Mode** first for better compatibility with adapters.
+5. **Start:** If prompted between ISO and DD mode, choose **ISO Mode**.
 
-> [!CAUTION]
-> **BIOS SETTINGS:** You must **Disable Secure Boot** in your computer's BIOS/UEFI settings, or the system will block SailOS from starting.
+> [!NOTE]
+> **Secure Boot Compatible:** SailOS is designed to work with standard UEFI settings. You should not need to disable Secure Boot to start the live environment.
 
 ---
 
