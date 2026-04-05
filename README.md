@@ -67,4 +67,4 @@ You cannot use standard Windows "Extract All" for this.
 ---
 
 ## 🎨 Credits
-**Built by [Ron's Animations](https://www.youtube.com/@rons-animations)** *Made with love for the animation community.* 🚢⚓
+**Built by [Ron's Animations](https://github.com/ronsanimations)** *Made with love for the animation community.* 🚢⚓
